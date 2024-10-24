@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:enrollment_system/screens/login_page.dart';
 import 'package:enrollment_system/screens/registro_alumno_page.dart';
-import 'package:enrollment_system/screens/agregar_curso.dart';
+import 'package:enrollment_system/screens/curso_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => RegistroCursoPage(),
+                    builder: (context) => CursosScreen(),
                   ),
                 );
               },
