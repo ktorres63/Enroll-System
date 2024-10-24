@@ -10,16 +10,48 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.white, // Cambia el color del texto a blanco
+            fontSize: 20, // Puedes ajustar el tamaño de la fuente si lo deseas
+            fontWeight: FontWeight.bold, // Ajusta el grosor del texto
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xFF2C3E50),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
+          // Foto de perfil con opciones
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'Configuración') {
+                // Acción para ir a Configuración
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => ConfigPage()));
+              } else if (value == 'Cerrar sesión') {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              }
             },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'Configuración',
+                child: Text('Configuración'),
+              ),
+              const PopupMenuItem(
+                value: 'Cerrar sesión',
+                child: Text('Cerrar sesión'),
+              ),
+            ],
+            // CircleAvatar para mostrar la imagen de perfil
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/profile1.png'),
+                radius: 18,
+              ),
+            ),
           ),
         ],
       ),
@@ -56,6 +88,7 @@ class HomePage extends StatelessWidget {
               child: const Text('Registro de Asignaturas'),
             ),
           ],
+
         ),
       ),
     );

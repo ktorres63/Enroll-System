@@ -1,5 +1,4 @@
 // main.dart
-import 'package:enrollment_system/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:enrollment_system/screens/login_page.dart';
 import 'package:enrollment_system/screens/agregar_curso.dart'; 
