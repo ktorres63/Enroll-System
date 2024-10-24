@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:enrollment_system/screens/login_page.dart';
 import 'package:enrollment_system/screens/registro_alumno_page.dart';
-
-import 'package:enrollment_system/screens/cursos_page.dart';
+import 'package:enrollment_system/screens/curso_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -57,50 +56,39 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start, // Alinea desde arriba
-            crossAxisAlignment:
-                CrossAxisAlignment.center, // Centra horizontalmente
-            children: [
-              const Text(
-                'Bienvenido al Sistema de Registro',
-                textAlign: TextAlign.center, // Centra el texto internamente
-                style: TextStyle(fontSize: 24),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 200, // Ancho fijo para los botones
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const RegistroAlumnosPage(),
-                      ),
-                    );
-                  },
-                  child: const Text('Registro de Alumnos'),
-                ),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 200, // Mismo ancho para mantener consistencia
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const CursosPage(),
-                      ),
-                    );
-                  },
-                  child: const Text('Registro de Cursos'),
-                ),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Bienvenido al Sistema Escolar',
+              style: TextStyle(fontSize: 24),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RegistroAlumnosPage(),
+                  ),
+                );
+              },
+              child: const Text('Registro de Alumnos'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CursosScreen(),
+                  ),
+                );
+              },
+              child: const Text('Registro de Asignaturas'),
+            ),
+          ],
+
         ),
       ),
     );
