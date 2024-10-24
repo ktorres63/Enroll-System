@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:enrollment_system/screens/login_page.dart';
 import 'package:enrollment_system/screens/registro_alumno_page.dart';
 
+import 'package:enrollment_system/screens/cursos_page.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -43,9 +45,24 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Registro de Alumnos'),
             ),
+
+            const SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CursosPage(),
+                  ),
+                );
+              },
+              child: const Text('Cursos'),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+
